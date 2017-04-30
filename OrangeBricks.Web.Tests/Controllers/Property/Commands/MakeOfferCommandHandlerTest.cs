@@ -37,6 +37,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
             var command = new MakeOfferCommand();
             command.PropertyId = 1;
             command.Offer = 9999;
+            command.BuyerUserId = "Test Buyer";
 
             _handler.Handle(command);
 
@@ -44,6 +45,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
             _context.Received(1).SaveChanges();
             Assert.True(property.Offers.Count == 1);
             Assert.True(property.Offers.First().Amount == 9999);
+            Assert.True(property.Offers.First().BuyerUserId == "Test Buyer");
         }
     }
 }
