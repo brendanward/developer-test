@@ -12,6 +12,7 @@
         <hr />
         <div>
             <p><strong>Offer Amount: </strong> £@offer.Amount</p>
+            <p><strong>For Property: </strong> @offer.NumberOfBedrooms bedroom @offer.PropertyType at @offer.StreetName</p>
             <p><strong>Offer Made At: </strong> @offer.CreatedAt.ToLongTimeString() on @offer.CreatedAt.ToShortDateString()</p>
             <p><strong>Status: </strong> @offer.Status</p>
         </div>
@@ -20,7 +21,7 @@
 else
 {
     <hr />
-    <div>
+    <div class="alert alert-info" role="alert">
         You have not made any offers on any properties.
     </div>
 }
