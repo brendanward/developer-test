@@ -21,7 +21,6 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
             {
                 AppointmentTime = command.AppointmentTime,
                 BuyerUserId = command.BuyerUserId,
-                IsAvailable = false,
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now
             };

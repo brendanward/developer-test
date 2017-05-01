@@ -19,7 +19,7 @@ namespace OrangeBricks.Web.Controllers.Offers.Builders
         public MyViewingAppointmentsViewModel Build(string buyerId)
         {
             var propertyAppointments = _context.Properties
-                .Where(p => p.Offers.Any())
+                .Where(p => p.ViewingAppointments.Any())
                 .Select(p => new
                 {
                     ViewingAppointments = p.ViewingAppointments.Where(a => a.BuyerUserId == buyerId && a.AppointmentTime > DateTime.Now),

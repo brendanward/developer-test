@@ -17,8 +17,6 @@ namespace OrangeBricks.Web.Models
         [Required]
         public string BuyerUserId { get; set; }
 
-        public Boolean IsAvailable { get; set; }
-
         public DateTime CreatedAt { get; set; }
 
         public DateTime UpdatedAt { get; set; }
