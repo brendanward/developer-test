@@ -12,15 +12,30 @@
     using (Html.BeginForm("MakeViewingAppointment", "Property", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         <div class="form-group">
-            @foreach (var appointmentTime in Model.AvailableAppointmentTimes)
-            {
-                <label class="custom-control custom-radio">
-                    <input type="radio" name="appointmentTime" class="custom-control-input" value="@appointmentTime">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">@appointmentTime.ToString()</span>
-                </label><br />
-            }        
+            <div class="container">
+                <div class="row">
+                    @foreach (var appointmentDate in Model.AvailableAppointmentTimes.GroupBy(t => t.Date))
+                    {
+                        <div class="col-sm-1">
+                            <h4>@appointmentDate.First().ToString("MMM d")</h4>
+
+                            @foreach (var appointmentTime in appointmentDate)
+                            {
+                                <div class="row">
+                                    <label class="custom-control custom-radio">
+                                        <input type="radio" name="appointmentTime" class="custom-control-input" value="@appointmentTime">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">@appointmentTime.ToString("h:mm tt")</span>
+                                    </label>
+                                </div>
+                            }
+
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
+
         @Html.Hidden("PropertyId", Model.PropertyId)
         <div class="form-group">
             <input type="submit" class="btn btn-default" value="Make Appointment" />
