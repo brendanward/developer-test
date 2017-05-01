@@ -202,6 +202,9 @@
     <Compile Include="Controllers\Property\ViewModels\MyPropertiesViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\PropertiesViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\PropertyViewModel.cs" />
+    <Compile Include="Controllers\ViewingAppointments\Builders\MyViewingAppointmentsViewModelBuilder.cs" />
+    <Compile Include="Controllers\ViewingAppointments\ViewingAppointmentsController.cs" />
+    <Compile Include="Controllers\ViewingAppointments\ViewModels\MyViewingAppointmentsViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -309,6 +312,7 @@
     <None Include="Views\Account\UnAuthorized.cshtml" />
     <Content Include="Views\Offers\MyOffers.cshtml" />
     <Content Include="Views\Property\MakeViewingAppointment.cshtml" />
+    <Content Include="Views\ViewingAppointments\MyViewingAppointments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

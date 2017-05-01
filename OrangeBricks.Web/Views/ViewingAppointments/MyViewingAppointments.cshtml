@@ -1,0 +1,24 @@
+﻿@model OrangeBricks.Web.Controllers.Offers.ViewModels.MyViewingAppointmentsViewModel
+@{
+    ViewBag.Title = "MyViewingAppointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>My Viewing Appointments</h2>
+<p>Here is a list of your upcoming appointments to view properties:</p>
+<hr />
+@if (Model.Appointments.Count > 0)
+{
+    foreach (var appointment in Model.Appointments)
+    {
+        <div>
+            <p>@appointment.AppointmentTime.ToShortDateString() at @appointment.AppointmentTime.ToLongTimeString() viewing @appointment.NumberOfBedrooms bedroom @appointment.PropertyType at @appointment.StreetName</p>
+        </div>
+    }
+}
+else
+{
+    <hr />
+    <div class="alert alert-info" role="alert">
+        You do not have any upcoming viewing appointments.
+    </div>
+}
